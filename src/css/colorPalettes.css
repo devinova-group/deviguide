@@ -1,0 +1,77 @@
+:root {
+    /* Devi Daisy palette */
+    --Daisy-50: #ECE8F6;
+    --Daisy-100: #CFC6E8;
+    --Daisy-200: #B0A1DA;
+    --Daisy-300: #917BCC;
+    --Daisy-400: #785EC0;
+    --Daisy-500: #6044B5;
+    --Daisy-600: #573FAF;
+    --Daisy-700: #4A37A6;
+    --Daisy-800: #3F319D;
+    --Daisy-900: #2B268D;
+}
+
+:root {
+    /* Oath palette */
+    --Oath-50: #FFF4FF;
+    --Oath-100: #FAF2FF;
+    --Oath-200: #F5ECFE;
+    --Oath-300: #E9E1FA;
+    --Oath-400: #C7BED7;
+    --Oath-500: #A8A1B8;
+    --Oath-600: #7E778D;
+    --Oath-700: #6B6278;
+    --Oath-800: #4A4458;
+    --Oath-900: #292336;
+}
+
+:root {
+    /* Lightmode primary and secondary colors */
+    --Primary: #6044B5;
+    --Secondary: #4C3A80;
+}
+
+:root {
+    /* Background color. ex. nav icons for mobile */
+    --Background: #FFFEFB;
+}
+
+:root {
+    /* Darkmode primary and secondary colors */
+    --Purple: #7B4EFF;
+    --Highlight: #A689FF;
+}
+
+:root {
+
+    --Error: #C12945;
+    --Positive: #26962B;
+    --Positive-2: #9AE79D;
+}
+
+:root {
+    /* Text colors */
+    --Text-v1: #08011C;
+    --Text-v2: #585858;
+    --Text-White: #000000;
+    --Text-Black: #FFFFFF;
+}
+
+:root {
+    /* Badge colors for Darkmode */
+    --badge-dark-InActive : #FF6768;
+    --badge-dark-Active : #3CC13B;
+    --badge-dark-Error : #FFC34E;
+    --badge-dark-Disabled : #C2C9D1;
+    --badge-dark-Primary : #B2C3FF;
+}
+
+:root {
+    /* Badge colors for Lightmode */
+    --badge-light-InActive : #F03738;
+    --badge-light-Active : #3CC13B;
+    --badge-light-Error : #CC9428;
+    --badge-light-Disabled : #B4B4B4;
+    --badge-light-Primary : #4B88CF;
+}
