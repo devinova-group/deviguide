@@ -1,7 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import {css} from "@emotion/css";
-
+import {theme} from "../theme/theme";
+import {useColorMode} from "theme-ui";
 const test = css`
   min-height: 100vh;
   padding: 4rem 0;
@@ -10,9 +11,11 @@ const test = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: "var(--theme-ui-colors-primary)";
 `;
 
 export default function Home() {
+  const [colorMode, setColorMode] = useColorMode();
   return (
     <div className={styles.container}>
       <Head>
@@ -25,6 +28,14 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <button
+          onClick={(e) => {
+            setColorMode(colorMode === "default" ? "dark" : "default");
+          }}
+        >
+          Toggle {colorMode === "default" ? "Dark" : "Light"}
+        </button>
       </main>
     </div>
   );
