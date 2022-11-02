@@ -11,7 +11,7 @@ const test = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: "var(--theme-ui-colors-primary)";
+  background: ${"var(--theme-ui-colors-primary)"};
 `;
 
 export default function Home() {
