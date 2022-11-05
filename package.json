@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@devinovastudio/devinova-comp-lib": "^0.1.1",
     "@emotion/css": "^11.10.5",
     "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.5",
     "@types/node": "18.11.9",
     "@types/react": "18.0.24",
