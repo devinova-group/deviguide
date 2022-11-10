@@ -4,7 +4,10 @@ import {ThemeProvider} from "theme-ui";
 import {theme} from "../theme/theme";
 import NavBar from "./Navbar";
 
+
+
 export default function App({Component, pageProps}: AppProps) {
+
   return (
     <ThemeProvider theme={theme}>
       <NavBar></NavBar>
