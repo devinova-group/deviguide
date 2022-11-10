@@ -1,15 +1,18 @@
-import {useRouter} from "next/router";
-import {compData} from "../../data";
-import {Typography} from "@devinovastudio/devinova-comp-lib";
-import {GetServerSideProps} from "next";
-import {useThemeUI} from "theme-ui";
-import {ComponentCard} from "../../components/ComponentCard";
+import { useRouter } from "next/router";
+import { compData } from "../../data";
+import { Typography } from "@devinovastudio/devinova-comp-lib";
+import { GetServerSideProps } from "next";
+import { useColorMode, useThemeUI } from "theme-ui";
+import { ComponentCard } from "../../components/ComponentCard";
 
 export default function Component() {
-  const router = useRouter();
-  const {component} = router.query;
+  const [colorMode, setColorMode] = useColorMode();
 
-  const isDarkTheme = useThemeUI().colorMode === "dark";
+  const router = useRouter();
+  const { component } = router.query;
+
+  const theme = useThemeUI();
+  const isDarkTheme = theme.colorMode === "dark";
 
   if (!component) return <h1>No comp?</h1>;
 
@@ -19,6 +22,13 @@ export default function Component() {
 
     return (
       <main>
+        <button
+          onClick={(e) => {
+            setColorMode(colorMode === "default" ? "dark" : "default");
+          }}
+        >
+          Toggle {colorMode === "default" ? "Dark" : "Light"}
+        </button>
         <Typography variant="h4QS" dark={isDarkTheme}>
           {data.name}
         </Typography>

@@ -1,6 +1,5 @@
-import {css} from "@emotion/css";
-import {useColorMode, useThemeUI} from "theme-ui";
-import {useState, useRef} from "react";
+import { css } from "@emotion/css";
+import { useState, useRef } from "react";
 import {
   Button,
   IconButton,
@@ -20,7 +19,7 @@ interface renderComponentProps {
   component: string;
 }
 
-const RenderComponent = ({component}: renderComponentProps) => {
+const RenderComponent = ({ component }: renderComponentProps) => {
   type CountdownHandle = React.ElementRef<typeof ToastPortal>;
   const toastRef = useRef<CountdownHandle>(null);
   const [content, setContent] = useState("This is a Toast");
@@ -38,7 +37,7 @@ const RenderComponent = ({component}: renderComponentProps) => {
   };
   switch (component) {
     case "button":
-      return <Button variant="primary">Button</Button>;
+      return <Button variant="text">Button</Button>;
     case "iconbutton":
       return <IconButton iconName="Plus" size="small" variant="positive" />;
     case "badge":
@@ -57,10 +56,10 @@ const RenderComponent = ({component}: renderComponentProps) => {
     case "dialog":
       return (
         <>
-          <Button variant="primary" onClick={openDialog}>
+          <Button variant="contained" onClick={openDialog}>
             Open Dialog
           </Button>
-          <Dialog isOpen={open} closeDialog={closeDialog}>
+          <Dialog open={open} onClose={closeDialog}>
             Button
           </Dialog>
         </>
@@ -99,7 +98,7 @@ const RenderComponent = ({component}: renderComponentProps) => {
               addToast();
             }}
           >
-            <Button variant="primary">Toast</Button>
+            <Button variant="outlined">Toast</Button>
           </form>
           <ToastPortal
             position={position}
