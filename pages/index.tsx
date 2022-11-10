@@ -2,9 +2,9 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import {css} from "@emotion/css";
 import {useColorMode} from "theme-ui";
+import NavBar from "./Navbar";
+import ToggleSwitch from "./Toggle";
 import Link from "next/link";
-
-
 
 const test = css`
   min-height: 100vh;
@@ -30,7 +30,13 @@ const test = css`
         <link rel="icon" href="/favicon.ico" />
        
       </Head>
-      
+
+
+      <main className={test}>
+        
+      </main>
+    </div>
+
       <section className={test}>
       <Link href={"/Sidebar_left"}>Sidebar test</Link>
         <h1 className={styles.title}>
@@ -47,6 +53,7 @@ const test = css`
 
       </div>
       </>
+
   );
 }
 
