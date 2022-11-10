@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@devinovastudio/devinova-comp-lib": "^0.1.1",
+    "@devinovastudio/devinova-comp-lib": "^0.1.13",
     "@emotion/css": "^11.10.5",
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
