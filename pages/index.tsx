@@ -35,10 +35,10 @@ const test = css`
       <main className={test}>
         
       </main>
-    </div>
+
 
       <section className={test}>
-      <Link href={"/Sidebar_left"}>Sidebar test</Link>
+    
         <h1 className={styles.title}>
           Welcome to Next
         </h1>

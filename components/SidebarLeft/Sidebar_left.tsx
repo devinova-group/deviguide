@@ -5,12 +5,14 @@ import {useRef, useState} from "react"
 import SvgMagnifyingGlass from "../../IconAsset/MagnifyingGlass";
 import Link from "next/link";
 
-
 interface mode {
     dark?: boolean
 }
 
-const size = {
+
+//*******Different device size if later consider to use *******//
+
+/* const size = {
     mobileS: '320px',
     mobileM: '375px',
     mobileL: '425px',
@@ -20,7 +22,7 @@ const size = {
     desktop: '2560px'
   }
 
-  export const device = {
+export const device = {
     mobileS: `(min-width: ${size.mobileS})`,
     mobileM: `(min-width: ${size.mobileM})`,
     mobileL: `(min-width: ${size.mobileL})`,
@@ -31,31 +33,40 @@ const size = {
     desktopL: `(min-width: ${size.desktop})`
   };
   
-const Gridbase : CSSObject = {
-    display:"block",
-    left: "30px",
-    right: "1201px",
-    top: "-1px",
-    bottom: "0px",
-    width: "239px",
-    height:"1300px", 
-}
+
 const media = 
   ` @media ${device.mobileM} { 
         width:375px;
         justify-content:center;
         margin:auto;
+        margin-top:-20px;
        };
        @media ${device.laptop} { 
         width:239px;
         justify-content:none;
-        margin:0;
-      }`
+        margin-top:-20px;
+        margin-left:0;
+      }` */
+
+//////////////////////////////////////////////////////////////////
+
+
+const Gridbase : CSSObject = {
+    display:"block",
+    color: "white",
+    left: "30px",
+    right: "1201px",
+    top: "1px",
+    bottom: "0px",
+    width: "239px",
+    height:"100%", 
+    borderRadius: "0px 20px 20px 0px",
+}
 
 const Grid = styled.div<mode>`
    ${Gridbase};
    background: ${p => (p.dark === true ? "#4A4458" : "#4C3A80" )};
-   ${media};
+
    `
 
 const Header = styled.div`
@@ -63,15 +74,15 @@ const Header = styled.div`
     position: relative; 
     width: 100%;
     height: 108px;
-    left: 11px;
-    top: 113px;
+    left: 9px;
+    top: 40px;
     justify-content:center;
     margin-bottom:30px;
 `
 const H3 = styled.h3({
  display:"block",
  position: "initial",
- paddingLeft: "30px"
+ paddingLeft: "50px"
 })
 
 const Divider = styled.div({
@@ -97,35 +108,49 @@ const SearchInput = styled.input({
     border: "2px solid #CFC6E8",
     boxShadow: "2px 5px 10px rgba(76, 58, 128, 0.25)",
     borderRadius: "6px",
-    paddingLeft:"30px"
+    paddingLeft:"30px",
+    color:"wheat",
 })
 
 const ComponentChecklist = styled.div`
     display: block;
     position: initial;
     width: 238px;
-    height: 1050px;
+    height: 1150px;
     left: 0px;
     top: 221px;
-    margin-top:135px;
+    margin-top:55px;
      `
 
 const ComponentList = styled.div`
     flex-direction: column;
     align-items: center;
     width:231px;
-    height:1045px;
+    height:95%;
     overflow-y: scroll;
+    scrollbar-width: thin;
+    ::-webkit-scrollbar {
+        border: 1px solid transparent;
+        background: rgba(106, 90, 205, 0.2);
+        border-radius: 8px 8px 8px 8px;
+        width:10px;
+    };
+    ::-webkit-scrollbar-thumb {
+        background: rgb(217, 217, 217, 0.35);
+        border-radius: 8px ;
+        border: 1px solid transparent;
+    }
     `
 
 const ListGrid = styled.div({
-    width: "227px",
+    width: "220px",
     height: "45px",
     flex: "none",
     order: "0",
     flexGrow: "0",
     paddingLeft:"50px",
     paddingTop:"10px",
+    paddingRight:"10px",
     marginTop:"20px",
     "&:hover":{
         boxSizing: "border-box",
@@ -146,7 +171,7 @@ const ListGrid = styled.div({
     }
 })
 
- const Sidebar_left = (dark:boolean) =>{
+ const Sidebar_left = (dark?:boolean) =>{
    /*  const router = useRouter()
     const { name } = router.query
     const component = componentsData.find(component => component.id === name) */

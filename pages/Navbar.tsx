@@ -56,7 +56,7 @@ function NavBar () {
              </div>
         <nav className={nav}>
             <ul className={align}>
-                <Link href={""} className={link}>Components</Link>
+                <Link href={"/Sidebar_left"} className={link}>Components</Link>
                 <Link href={""} className={link}>Coding</Link>
                 <Link href={""} className={link}>Pages Design</Link>
                 <Link href={""} className={link}>Design Guide</Link>
