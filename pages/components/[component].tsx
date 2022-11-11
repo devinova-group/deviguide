@@ -2,12 +2,10 @@ import { useRouter } from "next/router";
 import { compData } from "../../data";
 import { Typography } from "@devinovastudio/devinova-comp-lib";
 import { GetServerSideProps } from "next";
-import { useColorMode, useThemeUI } from "theme-ui";
+import { useThemeUI } from "theme-ui";
 import { ComponentCard } from "../../components/ComponentCard";
 
 export default function Component() {
-  const [colorMode, setColorMode] = useColorMode();
-
   const router = useRouter();
   const { component } = router.query;
 
@@ -22,13 +20,6 @@ export default function Component() {
 
     return (
       <main>
-        <button
-          onClick={(e) => {
-            setColorMode(colorMode === "default" ? "dark" : "default");
-          }}
-        >
-          Toggle {colorMode === "default" ? "Dark" : "Light"}
-        </button>
         <Typography variant="h4QS" dark={isDarkTheme}>
           {data.name}
         </Typography>

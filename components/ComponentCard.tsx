@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import { useState, useRef } from "react";
 import {
   Button,
@@ -14,6 +13,9 @@ import {
   ToastPortal,
   Typography,
 } from "@devinovastudio/devinova-comp-lib";
+import styled from "@emotion/styled";
+import { useTheme } from "@emotion/react";
+import { Box } from "theme-ui";
 
 interface renderComponentProps {
   component: string;
@@ -124,32 +126,30 @@ const RenderComponent = ({ component }: renderComponentProps) => {
   return <div>{component}</div>;
 };
 
+// const theme = useTheme()
+
+// const cardDiv = styled.div(`
+// background: (${theme}) => {
+// }
+// border: ${theme};
+// box-shadow: ${"var(--theme-ui-colors-cardShadow)"};
+// border-radius: ${"var(--theme-ui-colors-cardRadius)"};
+// padding: 1rem;
+// height: fit-content;
+// min-height: 100px;
+// width: "735px";
+// `)
+
 interface componentCardProps {
   component: string;
   width?: number;
   style?: React.CSSProperties;
 }
 
-export const ComponentCard = ({
-  component,
-  style,
-  width,
-}: componentCardProps) => {
+export const ComponentCard = ({ component }: componentCardProps) => {
   return (
-    <div
-      className={css`
-        background: ${"var(--theme-ui-colors-cardBackground)"};
-        border: ${"var(--theme-ui-colors-cardBorder)"};
-        box-shadow: ${"var(--theme-ui-colors-cardShadow)"};
-        border-radius: ${"var(--theme-ui-colors-cardRadius)"};
-        padding: 1rem;
-        height: fit-content;
-        min-height: 100px;
-        width: ${width ? width + "px" : "735px"};
-      `}
-      style={style}
-    >
+    <Box variant="styles.deviCard">
       <RenderComponent component={component.toLowerCase()} />
-    </div>
+    </Box>
   );
 };
