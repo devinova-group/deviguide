@@ -1,13 +1,13 @@
-import { useRouter } from "next/router";
-import { compData } from "../../data";
-import { Typography } from "@devinovastudio/devinova-comp-lib";
-import { GetServerSideProps } from "next";
-import { useThemeUI } from "theme-ui";
-import { ComponentCard } from "../../components/ComponentCard";
+import {useRouter} from "next/router";
+import {compData} from "../../data";
+import {Typography} from "@devinovastudio/devinova-comp-lib";
+import {GetServerSideProps} from "next";
+import {useThemeUI} from "theme-ui";
+import {ComponentCard} from "../../components/ComponentCard";
 
 export default function Component() {
   const router = useRouter();
-  const { component } = router.query;
+  const {component} = router.query;
 
   const theme = useThemeUI();
   const isDarkTheme = theme.colorMode === "dark";

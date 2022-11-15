@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import {useState, useRef} from "react";
 import {
   Button,
   IconButton,
@@ -13,15 +13,14 @@ import {
   ToastPortal,
   Typography,
 } from "@devinovastudio/devinova-comp-lib";
-import styled from "@emotion/styled";
-import { useTheme } from "@emotion/react";
-import { Box } from "theme-ui";
+import {Box} from "theme-ui";
+import {ButtonPreviews} from "./buttonPreview";
 
 interface renderComponentProps {
   component: string;
 }
 
-const RenderComponent = ({ component }: renderComponentProps) => {
+const RenderComponent = ({component}: renderComponentProps) => {
   type CountdownHandle = React.ElementRef<typeof ToastPortal>;
   const toastRef = useRef<CountdownHandle>(null);
   const [content, setContent] = useState("This is a Toast");
@@ -39,7 +38,7 @@ const RenderComponent = ({ component }: renderComponentProps) => {
   };
   switch (component) {
     case "button":
-      return <Button variant="text">Button</Button>;
+      return <ButtonPreviews />;
     case "iconbutton":
       return <IconButton iconName="Plus" size="small" variant="positive" />;
     case "badge":
@@ -146,7 +145,7 @@ interface componentCardProps {
   style?: React.CSSProperties;
 }
 
-export const ComponentCard = ({ component }: componentCardProps) => {
+export const ComponentCard = ({component}: componentCardProps) => {
   return (
     <Box variant="styles.deviCard">
       <RenderComponent component={component.toLowerCase()} />
