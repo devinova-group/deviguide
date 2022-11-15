@@ -2,7 +2,6 @@ import {Button} from "@devinovastudio/devinova-comp-lib";
 import {Field, Form, Formik} from "formik";
 import {useState} from "react";
 import {Box} from "theme-ui";
-import {isPropertySignature} from "typescript";
 
 const initialValues = {
   content: "Button",
