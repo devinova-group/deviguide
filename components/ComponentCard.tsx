@@ -15,6 +15,7 @@ import {
 import {Box} from "theme-ui";
 import {ButtonPreviews} from "./buttonPreview";
 import {ToastPreview} from "./toastPreview";
+import {TypographyPreview} from "./typographyPreview";
 
 interface renderComponentProps {
   component: string;
@@ -78,13 +79,7 @@ const RenderComponent = ({component}: renderComponentProps) => {
     case "toast":
       return <ToastPreview />;
     case "typography":
-      return (
-        <Typography>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis et
-          mollitia perferendis debitis quidem sunt libero consequatur,
-          recusandae quas laborum?
-        </Typography>
-      );
+      return <TypographyPreview />;
 
     default:
       break;
