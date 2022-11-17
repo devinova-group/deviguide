@@ -10,24 +10,17 @@ import {
   Dialog,
   Loader,
   Textfield,
-  ToastPortal,
   Typography,
 } from "@devinovastudio/devinova-comp-lib";
 import {Box} from "theme-ui";
 import {ButtonPreviews} from "./buttonPreview";
+import {ToastPreview} from "./toastPreview";
 
 interface renderComponentProps {
   component: string;
 }
 
 const RenderComponent = ({component}: renderComponentProps) => {
-  type CountdownHandle = React.ElementRef<typeof ToastPortal>;
-  const toastRef = useRef<CountdownHandle>(null);
-  const [content, setContent] = useState("This is a Toast");
-  const [variant, setVariant] = useState("success");
-  const [position, setPosition] = useState("bottom-right");
-  const [autoClose, setAutoClose] = useState(true);
-  const [autoCloseTime, setAutoCloseTime] = useState(5000);
   const [open, setOpen] = useState(false);
 
   const closeDialog = () => {
@@ -73,7 +66,6 @@ const RenderComponent = ({component}: renderComponentProps) => {
           <Loader progress="success" />
         </>
       );
-      break;
     case "textfield":
       return (
         <Textfield
@@ -84,31 +76,7 @@ const RenderComponent = ({component}: renderComponentProps) => {
         />
       );
     case "toast":
-      const addToast = () => {
-        toastRef.current?.createToast({
-          variant,
-          content,
-        });
-      };
-
-      return (
-        <>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              addToast();
-            }}
-          >
-            <Button variant="outlined">Toast</Button>
-          </form>
-          <ToastPortal
-            position={position}
-            ref={toastRef}
-            autoClose={autoClose}
-            autoCloseTime={autoCloseTime}
-          />
-        </>
-      );
+      return <ToastPreview />;
     case "typography":
       return (
         <Typography>
