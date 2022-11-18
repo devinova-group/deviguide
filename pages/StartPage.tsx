@@ -7,7 +7,7 @@ import Link from "next/link";
 import arrow from "./Vector.svg";
 
 const test = css`
-  background-image: url("./light.jpg");
+  height: 100vh;
 `;
 const arrowAlign = css`
   padding-right: 10px;
@@ -46,7 +46,7 @@ const button = css`
 
 const StartPage = () => {
   return (
-    <div>
+    <div className={test}>
       <div className={align}>
         <span className={head1}>Welcome To</span>
         <span className={head2}>Devinova Guides</span>

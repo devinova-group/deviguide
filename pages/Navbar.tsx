@@ -20,7 +20,8 @@ const nav = css`
 const header = css`
     width: 100%;
     display: flex;
-    height: 6rem;   
+    height: 6rem;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.25);   
 `;
 const headerLeft = css`
   display: flex;
@@ -30,6 +31,7 @@ const headerLeft = css`
   cursor: pointer;
 `;
 const link = css`
+color: ${"var(--theme-ui-colors-linkPrimary)"};
 margin-right: 50px;
 padding-bottom: 10px;
 border-bottom: 3px solid transparent;
@@ -52,7 +54,9 @@ function NavBar () {
     return (
         <header className={header}>
             <div className={headerLeft}>
+            <Link href={"/"}>
             <Image src={img} alt={""}></Image>
+            </Link>
              </div>
         <nav className={nav}>
             <ul className={align}>

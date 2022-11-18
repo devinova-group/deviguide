@@ -9,15 +9,25 @@ export const theme: Theme = {
     navPrimary: "#FFFEFB",
     linkPrimary: "#585858",
     hoverPrimary: "#6044B5",
-    backGround: `url(${lightmode})`,
     modes: {
       dark: {
         primary: "black",
         navPrimary: "#4A4458",
         linkPrimary: "#FFF",
         hoverPrimary: "#A689FF",
-        backGround: `url(${dark})`,
+        cardBackground: `rgba(107, 98, 120, 0.7)`,
+        
       },
     },
+    styles: {
+      deviCard: {
+        background: "cardBackground",
+        borderRadius: '20px',
+        boxShadow: '4px 4px 21px 8px rgba(0, 0, 0, 0.25)',
+        border: '1px solid rgba(255, 255, 255, 0.01)',
+        padding: '10px',
+        maxWidth: '735px'
+      }
+    }
   },
 };
