@@ -4,6 +4,8 @@ import { Typography } from "@devinovastudio/devinova-comp-lib";
 import { GetServerSideProps } from "next";
 import { useThemeUI } from "theme-ui";
 import { ComponentCard } from "../../components/ComponentCard";
+import { css } from "@emotion/css";
+import { SidebarLeft } from "../../components/SidebarLeft/Sidebar_left";
 
 export default function Component() {
   const router = useRouter();
@@ -19,7 +21,13 @@ export default function Component() {
     const data = compData[compName];
 
     return (
-      <main>
+      <main
+        className={css`
+          min-height: calc(100vh - 6rem);
+        `}
+      >
+        <SidebarLeft />
+
         <Typography variant="h4QS" dark={isDarkTheme}>
           {data.name}
         </Typography>
