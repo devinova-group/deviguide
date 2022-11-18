@@ -1,4 +1,4 @@
-import {useState, useRef} from "react";
+import { useState, useRef } from "react";
 import {
   Button,
   IconButton,
@@ -10,24 +10,18 @@ import {
   Dialog,
   Loader,
   Textfield,
-  ToastPortal,
   Typography,
 } from "@devinovastudio/devinova-comp-lib";
-import {Box} from "theme-ui";
-import {ButtonPreviews} from "./buttonPreview";
+import { Box } from "theme-ui";
+import { ButtonPreviews } from "./buttonPreview";
+import { ToastPreview } from "./toastPreview";
+import { TypographyPreview } from "./typographyPreview";
 
 interface renderComponentProps {
   component: string;
 }
 
-const RenderComponent = ({component}: renderComponentProps) => {
-  type CountdownHandle = React.ElementRef<typeof ToastPortal>;
-  const toastRef = useRef<CountdownHandle>(null);
-  const [content, setContent] = useState("This is a Toast");
-  const [variant, setVariant] = useState("success");
-  const [position, setPosition] = useState("bottom-right");
-  const [autoClose, setAutoClose] = useState(true);
-  const [autoCloseTime, setAutoCloseTime] = useState(5000);
+const RenderComponent = ({ component }: renderComponentProps) => {
   const [open, setOpen] = useState(false);
 
   const closeDialog = () => {
@@ -73,7 +67,6 @@ const RenderComponent = ({component}: renderComponentProps) => {
           <Loader progress="success" />
         </>
       );
-      break;
     case "textfield":
       return (
         <Textfield
@@ -84,45 +77,15 @@ const RenderComponent = ({component}: renderComponentProps) => {
         />
       );
     case "toast":
-      const addToast = () => {
-        toastRef.current?.createToast({
-          variant,
-          content,
-        });
-      };
-
-      return (
-        <>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              addToast();
-            }}
-          >
-            <Button variant="outlined">Toast</Button>
-          </form>
-          <ToastPortal
-            position={position}
-            ref={toastRef}
-            autoClose={autoClose}
-            autoCloseTime={autoCloseTime}
-          />
-        </>
-      );
+      return <ToastPreview />;
     case "typography":
-      return (
-        <Typography>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis et
-          mollitia perferendis debitis quidem sunt libero consequatur,
-          recusandae quas laborum?
-        </Typography>
-      );
+      return <TypographyPreview />;
 
     default:
       break;
   }
 
-  return <div>{component}</div>;
+  return <>{component}</>;
 };
 
 // const theme = useTheme()
@@ -145,7 +108,7 @@ interface componentCardProps {
   style?: React.CSSProperties;
 }
 
-export const ComponentCard = ({component}: componentCardProps) => {
+export const ComponentCard = ({ component }: componentCardProps) => {
   return (
     <Box variant="styles.deviCard">
       <RenderComponent component={component.toLowerCase()} />
