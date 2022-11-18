@@ -1,38 +1,35 @@
 import Link from "next/link";
-import {css} from "@emotion/css";
+import { css } from "@emotion/css";
 import Image from "next/image";
-import {Switch, useColorMode} from "theme-ui";
-import img from "./Frame.png"
+import { Switch, useColorMode } from "theme-ui";
+import img from "./Frame.png";
 import ToggleSwitch from "./Toggle";
 
 
 
-
 const align = css`
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
 `;
 const nav = css`
-    
+    background: rgba(0,0,0,0,2);
     display: flex;
     align-items: center;
 `;
 const header = css`
-    box-shadow: 1px 4px 10px rgba(0,0,0,0.1);
     width: 100%;
     display: flex;
     height: 6rem;   
 `;
 const headerLeft = css`
-    display: flex;
-    align-items: center; 
-    margin-left: 2rem;
-    padding-right: 13rem;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  padding-right: 13rem;
+  cursor: pointer;
 `;
 const link = css`
-color: ${"var(--theme-ui-colors-linkPrimary)"};
 margin-right: 50px;
 padding-bottom: 10px;
 border-bottom: 3px solid transparent;
@@ -40,13 +37,13 @@ font-size: 15px;
 box-sizing: border-box;
 cursor: pointer;
 :hover {
- border-color: ${"var(--theme-ui-colors-hoverPrimary)"};
+ border-color: #6044B5;
  
 }
 `;
 const toggleAlign = css`
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 `;
 
 
@@ -55,9 +52,7 @@ function NavBar () {
     return (
         <header className={header}>
             <div className={headerLeft}>
-            <Link href={"/"}>
             <Image src={img} alt={""}></Image>
-            </Link>
              </div>
         <nav className={nav}>
             <ul className={align}>
@@ -76,4 +71,4 @@ function NavBar () {
     )
 }
 
-export default NavBar; 
+export default NavBar;
