@@ -1,4 +1,4 @@
-import {useState, useRef} from "react";
+import { useState, useRef } from "react";
 import {
   Button,
   IconButton,
@@ -12,16 +12,16 @@ import {
   Textfield,
   Typography,
 } from "@devinovastudio/devinova-comp-lib";
-import {Box} from "theme-ui";
-import {ButtonPreviews} from "./buttonPreview";
-import {ToastPreview} from "./toastPreview";
-import {TypographyPreview} from "./typographyPreview";
+import { Box } from "theme-ui";
+import { ButtonPreviews } from "./buttonPreview";
+import { ToastPreview } from "./toastPreview";
+import { TypographyPreview } from "./typographyPreview";
 
 interface renderComponentProps {
   component: string;
 }
 
-const RenderComponent = ({component}: renderComponentProps) => {
+const RenderComponent = ({ component }: renderComponentProps) => {
   const [open, setOpen] = useState(false);
 
   const closeDialog = () => {
@@ -85,7 +85,7 @@ const RenderComponent = ({component}: renderComponentProps) => {
       break;
   }
 
-  return <div>{component}</div>;
+  return <>{component}</>;
 };
 
 // const theme = useTheme()
@@ -108,7 +108,7 @@ interface componentCardProps {
   style?: React.CSSProperties;
 }
 
-export const ComponentCard = ({component}: componentCardProps) => {
+export const ComponentCard = ({ component }: componentCardProps) => {
   return (
     <Box variant="styles.deviCard">
       <RenderComponent component={component.toLowerCase()} />
