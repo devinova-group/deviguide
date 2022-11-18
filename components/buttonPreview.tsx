@@ -1,7 +1,7 @@
-import {Button} from "@devinovastudio/devinova-comp-lib";
-import {Field, Form, Formik} from "formik";
-import {useState} from "react";
-import {Box} from "theme-ui";
+import { Button } from "@devinovastudio/devinova-comp-lib";
+import { Field, Form, Formik } from "formik";
+import { useState } from "react";
+import { Box } from "theme-ui";
 
 const initialValues = {
   content: "Button",
@@ -26,86 +26,32 @@ export const ButtonPreviews = () => {
     <Box>
       <Formik
         initialValues={initialValues}
-        onSubmit={(values) => setVariant(values.variant as unknown as variant)}
+        onSubmit={(values) => {
+          setVariant(values.variant as unknown as variant);
+          setColor(values.color as unknown as color);
+          setContent(values.content);
+        }}
       >
         {(props) => (
-          <Form onSubmit={props.handleSubmit} onChange={props.handleSubmit}>
-            <div>
-              <label>
-                <Field
-                  type="radio"
-                  name="variant"
-                  value="contained"
-                  onChange={props.handleChange}
-                />
-                Contained
-              </label>
-              <label>
-                <Field
-                  type="radio"
-                  name="variant"
-                  value="outlined"
-                  onChange={props.handleChange}
-                />
-                Outlined
-              </label>
-              <label>
-                <Field
-                  type="radio"
-                  name="variant"
-                  value="text"
-                  onChange={props.handleChange}
-                />
-                Text
-              </label>
-            </div>
-          </Form>
-        )}
-      </Formik>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={(values) => setColor(values.color as unknown as color)}
-      >
-        {(props) => (
-          <Form onSubmit={props.handleSubmit} onChange={props.handleSubmit}>
-            <div>
-              <label>
-                <Field
-                  type="radio"
-                  name="color"
-                  value="primary"
-                  onChange={props.handleChange}
-                />
-                Primary
-              </label>
-              <label>
-                <Field
-                  type="radio"
-                  name="color"
-                  value="error"
-                  onChange={props.handleChange}
-                />
-                Error
-              </label>
-              <label>
-                <Field
-                  type="radio"
-                  name="color"
-                  value="positive"
-                  onChange={props.handleChange}
-                />
-                Positive
-              </label>
-            </div>
-          </Form>
-        )}
-      </Formik>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={(values) => setContent(values.content)}
-      >
-        {(props) => (
-          <Form onSubmit={props.handleSubmit} onChange={props.handleSubmit}>
+          <Form onChange={props.handleSubmit}>
+            <Field
+              name="variant"
+              component="select"
+              onChange={props.handleChange}
+            >
+              <option value="contained">Contained</option>
+              <option value="outlined">Outlined</option>
+              <option value="text">Text</option>
+            </Field>
+            <Field
+              name="color"
+              component="select"
+              onChange={props.handleChange}
+            >
+              <option value="primary">Primary</option>
+              <option value="error">Error</option>
+              <option value="positive">Positive</option>
+            </Field>
             <label>
               Content:
               <Field
@@ -118,7 +64,6 @@ export const ButtonPreviews = () => {
           </Form>
         )}
       </Formik>
-
       <Button color={color} variant={variant}>
         {content}
       </Button>

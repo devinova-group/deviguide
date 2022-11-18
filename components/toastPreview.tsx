@@ -1,6 +1,6 @@
-import {ToastPortal, Button} from "@devinovastudio/devinova-comp-lib";
-import {Form, Formik, Field} from "formik";
-import {useRef, useState} from "react";
+import { ToastPortal, Button } from "@devinovastudio/devinova-comp-lib";
+import { Form, Formik, Field } from "formik";
+import { useEffect, useRef, useState } from "react";
 
 const initialValues = {
   content: "This is a Toast!",
@@ -13,11 +13,12 @@ const initialValues = {
 export const ToastPreview = () => {
   type CountdownHandle = React.ElementRef<typeof ToastPortal>;
   const toastRef = useRef<CountdownHandle>(null);
-  const [content, setContent] = useState<string>();
-  const [variant, setVariant] = useState<string>();
-  const [position, setPosition] = useState<string>();
-  const [autoClose, setAutoClose] = useState<boolean>();
-  const [autoCloseTime, setAutoCloseTime] = useState<number>();
+  const [content, setContent] = useState("This is a Toast!");
+  const [variant, setVariant] = useState("success");
+  const [position, setPosition] = useState("bottom-right");
+  const [autoClose, setAutoClose] = useState(true);
+  const [autoCloseTime, setAutoCloseTime] = useState(5000);
+  const [test, setTest] = useState(false);
 
   const addToast = () => {
     toastRef.current?.createToast({
@@ -25,6 +26,10 @@ export const ToastPreview = () => {
       content,
     });
   };
+
+  useEffect(() => {
+    addToast();
+  }, [test]);
 
   return (
     <div>
@@ -37,7 +42,7 @@ export const ToastPreview = () => {
           setPosition(values.position);
           setAutoClose(autoClose);
           setAutoCloseTime(values.autoCloseTime);
-          addToast();
+          test ? setTest(false) : setTest(true);
         }}
       >
         {(props) => (
