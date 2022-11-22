@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import {useState} from "react";
 import {
   Button,
   IconButton,
@@ -10,18 +10,17 @@ import {
   Dialog,
   Loader,
   Textfield,
-  Typography,
 } from "@devinovastudio/devinova-comp-lib";
-import { Box } from "theme-ui";
-import { ButtonPreviews } from "./buttonPreview";
-import { ToastPreview } from "./toastPreview";
-import { TypographyPreview } from "./typographyPreview";
+import {Box} from "theme-ui";
+import {ButtonPreviews} from "./buttonPreview";
+import {ToastPreview} from "./toastPreview";
+import {TypographyPreview} from "./typographyPreview";
 
 interface renderComponentProps {
   component: string;
 }
 
-const RenderComponent = ({ component }: renderComponentProps) => {
+const RenderComponent = ({component}: renderComponentProps) => {
   const [open, setOpen] = useState(false);
 
   const closeDialog = () => {
@@ -88,27 +87,13 @@ const RenderComponent = ({ component }: renderComponentProps) => {
   return <>{component}</>;
 };
 
-// const theme = useTheme()
-
-// const cardDiv = styled.div(`
-// background: (${theme}) => {
-// }
-// border: ${theme};
-// box-shadow: ${"var(--theme-ui-colors-cardShadow)"};
-// border-radius: ${"var(--theme-ui-colors-cardRadius)"};
-// padding: 1rem;
-// height: fit-content;
-// min-height: 100px;
-// width: "735px";
-// `)
-
 interface componentCardProps {
   component: string;
   width?: number;
   style?: React.CSSProperties;
 }
 
-export const ComponentCard = ({ component }: componentCardProps) => {
+export const ComponentCard = ({component}: componentCardProps) => {
   return (
     <Box variant="styles.deviCard">
       <RenderComponent component={component.toLowerCase()} />

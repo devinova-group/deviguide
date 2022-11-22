@@ -1,7 +1,7 @@
-import { css, CSSObject } from "@emotion/css";
+import {css, CSSObject} from "@emotion/css";
 import styled from "@emotion/styled";
 import componentsData from "./componentsData";
-import { useRef, useState } from "react";
+import {useRef, useState} from "react";
 import SvgMagnifyingGlass from "../../IconAsset/MagnifyingGlass";
 import Link from "next/link";
 
@@ -32,12 +32,9 @@ export const device = {
 
 const Gridbase: CSSObject = {
   display: "block",
-  left: "30px",
-  right: "1201px",
-  top: "-1px",
-  bottom: "0px",
   width: "239px",
   height: "1300px",
+  position: "fixed",
 };
 const media = ` @media ${device.mobileM} { 
         width:375px;
@@ -52,7 +49,7 @@ const media = ` @media ${device.mobileM} {
 
 const Grid = styled.div<mode>`
   ${Gridbase};
-  background: ${(p) => (p.dark === true ? "#4A4458" : "#4C3A80")};
+  background: ${(props) => (props.dark ? "#4A4458" : "#4C3A80")};
   ${media};
 `;
 
@@ -60,7 +57,7 @@ const Header = styled.div`
   display: block;
   position: relative;
   width: 100%;
-  height: 108px;
+  height: fit-content;
   left: 11px;
   top: 113px;
   justify-content: center;
@@ -99,12 +96,10 @@ const SearchInput = styled.input({
 
 const ComponentChecklist = styled.div`
   display: block;
-  position: initial;
+  position: relative;
   width: 238px;
-  height: 1050px;
-  left: 0px;
-  top: 221px;
-  margin-top: 135px;
+  height: 600px;
+  top: 160px;
 `;
 
 const ComponentList = styled.div`
@@ -143,7 +138,7 @@ const ListGrid = styled.div({
   },
 });
 
-export const SidebarLeft = ({ dark }: mode) => {
+export const SidebarLeft = ({dark}: mode) => {
   const [searchInput, setSearchInput] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
   const searchData = (searchValue: string) => {
@@ -190,7 +185,7 @@ export const SidebarLeft = ({ dark }: mode) => {
           <ComponentList>
             {filteredResults.map((item: any) => {
               return (
-                <Link href={`/components/${item.id}`}>
+                <Link href={`/components/${item.id}`} key={item.id}>
                   <ListGrid key={item.id}>{item.id}</ListGrid>
                 </Link>
               );
@@ -200,7 +195,7 @@ export const SidebarLeft = ({ dark }: mode) => {
           <ComponentList>
             {componentsData.map((data: any) => {
               return (
-                <Link href={`/components/${data.id}`}>
+                <Link href={`/components/${data.id}`} key={data.id}>
                   <ListGrid key={data.id}>{data.id}</ListGrid>
                 </Link>
               );

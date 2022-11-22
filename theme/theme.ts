@@ -1,6 +1,4 @@
 import type {Theme} from "theme-ui";
-import dark from "../pages/Dark.jpg"
-import lightmode from "../pages/Background.jpg"
 
 export const theme: Theme = {
   // initialColorModeName: "light",
@@ -9,6 +7,7 @@ export const theme: Theme = {
     navPrimary: "#FFFEFB",
     linkPrimary: "#585858",
     hoverPrimary: "#6044B5",
+    cardBackground: `rgba(255, 255, 255, 0.3)`,
     modes: {
       dark: {
         primary: "black",
@@ -16,18 +15,17 @@ export const theme: Theme = {
         linkPrimary: "#FFF",
         hoverPrimary: "#A689FF",
         cardBackground: `rgba(107, 98, 120, 0.7)`,
-        
       },
     },
-    styles: {
-      deviCard: {
-        background: "cardBackground",
-        borderRadius: '20px',
-        boxShadow: '4px 4px 21px 8px rgba(0, 0, 0, 0.25)',
-        border: '1px solid rgba(255, 255, 255, 0.01)',
-        padding: '10px',
-        maxWidth: '735px'
-      }
-    }
+  },
+  styles: {
+    deviCard: {
+      background: `cardBackground`,
+      borderRadius: "20px",
+      boxShadow: "4px 4px 21px 8px rgba(0, 0, 0, 0.25)",
+      border: "1px solid rgba(255, 255, 255, 0.01)",
+      padding: "10px",
+      maxWidth: "735px",
+    },
   },
 };
