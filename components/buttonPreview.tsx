@@ -1,7 +1,7 @@
-import { Button } from "@devinovastudio/devinova-comp-lib";
-import { Field, Form, Formik } from "formik";
-import { useState } from "react";
-import { Box } from "theme-ui";
+import {Button, Typography} from "@devinovastudio/devinova-comp-lib";
+import {Field, Form, Formik} from "formik";
+import {useState} from "react";
+import {Box, useThemeUI} from "theme-ui";
 
 const initialValues = {
   content: "Button",
@@ -21,6 +21,9 @@ export const ButtonPreviews = () => {
   const [color, setColor] = useState<color>("primary");
   const [disabled, setDisabled] = useState(false);
   const [isHover, setIsHover] = useState(true);
+
+  const theme = useThemeUI();
+  const isDarkTheme = theme.colorMode === "dark";
 
   return (
     <Box>
@@ -53,7 +56,7 @@ export const ButtonPreviews = () => {
               <option value="positive">Positive</option>
             </Field>
             <label>
-              Content:
+              <Typography dark={isDarkTheme}>Content:</Typography>
               <Field
                 onChange={props.handleChange}
                 type="text"

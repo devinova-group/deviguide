@@ -2,6 +2,7 @@ import {Button, Typography} from "@devinovastudio/devinova-comp-lib";
 import {css} from "@emotion/css";
 import {Formik, Form, Field} from "formik";
 import {useState} from "react";
+import {useThemeUI} from "theme-ui";
 
 const initialValues = {
   content: "The quick brown fox jumps over the lazy dog",
@@ -52,6 +53,9 @@ export const TypographyPreview = () => {
     "The quick brown fox jumps over the lazy dog"
   );
   const [variant, setVariant] = useState<variant>();
+
+  const theme = useThemeUI();
+  const isDarkTheme = theme.colorMode === "dark";
 
   return (
     <>
@@ -127,7 +131,9 @@ export const TypographyPreview = () => {
           </Form>
         )}
       </Formik>
-      <Typography variant={variant}>{content}</Typography>
+      <Typography variant={variant} dark={isDarkTheme}>
+        {content}
+      </Typography>
     </>
   );
 };

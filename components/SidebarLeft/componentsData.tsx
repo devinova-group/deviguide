@@ -1,4 +1,4 @@
-import React from "react"
+
 
 const componentsData : any = [
     {
@@ -9,6 +9,9 @@ const componentsData : any = [
         id: 'Spacing',
         
     },
+     {
+    id: "Dialog",
+    },
     {
         id: 'ColorSystem',
         
@@ -18,7 +21,7 @@ const componentsData : any = [
         
     },
     {
-        id: 'Cards',
+        id: 'Card',
         
     },
     {
@@ -34,7 +37,7 @@ const componentsData : any = [
         
     },
     {
-        id: 'Loading',
+        id: 'Loader',
         
     },
     {
@@ -50,7 +53,7 @@ const componentsData : any = [
         
     },
     {
-        id: 'Text field',
+        id: 'Textfield',
         
     },
     {
@@ -62,7 +65,7 @@ const componentsData : any = [
         
     },
     {
-        id: 'Toaster',
+        id: 'Toast',
         
     },
     {
@@ -85,3 +88,4 @@ const componentsData : any = [
 ]
 
 export default componentsData
+
