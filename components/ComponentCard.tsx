@@ -11,10 +11,12 @@ import {
   Loader,
   Textfield,
 } from "@devinovastudio/devinova-comp-lib";
-import {Box} from "theme-ui";
-import {ButtonPreviews} from "./buttonPreview";
-import {ToastPreview} from "./toastPreview";
-import {TypographyPreview} from "./typographyPreview";
+
+import { Box } from "theme-ui";
+import { ButtonPreviews } from "./buttonPreview";
+import { ToastPreview } from "./toastPreview";
+import { TypographyPreview } from "./typographyPreview";
+import { IconButtonPreview} from "./IconButtonPreview"; 
 
 interface renderComponentProps {
   component: string;
@@ -33,7 +35,7 @@ const RenderComponent = ({component}: renderComponentProps) => {
     case "button":
       return <ButtonPreviews />;
     case "iconbutton":
-      return <IconButton iconName="Plus" size="small" variant="positive" />;
+      return <IconButtonPreview/>; 
     case "badge":
       return <Badge variant="Active" />;
     case "card":
