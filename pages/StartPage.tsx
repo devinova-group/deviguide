@@ -50,7 +50,7 @@ const StartPage = () => {
       <div className={align}>
         <span className={head1}>Welcome To</span>
         <span className={head2}>Devinova Guides</span>
-        <Link href={"/Sidebar_left"}>
+        <Link href={"/components"}>
           <button className={button}>
             <Image src={arrow} alt={""} className={arrowAlign}></Image>
             View Components

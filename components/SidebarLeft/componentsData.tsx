@@ -77,7 +77,10 @@ const componentsData : any = [
         id: 'Grid System',
         
     },
-   
+    {
+        id: 'Iconbutton',
+        
+    },
 
 ]
 
