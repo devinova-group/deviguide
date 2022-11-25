@@ -1,7 +1,7 @@
 import {css, CSSObject} from "@emotion/css";
 import styled from "@emotion/styled";
 import componentsData from "./componentsData";
-import {useRef, useState} from "react";
+import {useState} from "react";
 import SvgMagnifyingGlass from "../../IconAsset/MagnifyingGlass";
 import Link from "next/link";
 
@@ -9,7 +9,8 @@ interface mode {
   dark?: boolean;
 }
 
-const size = {
+//*******Different device size if later consider to use *******//
+/* const size = {
   mobileS: "320px",
   mobileM: "375px",
   mobileL: "425px",
@@ -30,43 +31,45 @@ export const device = {
   desktopL: `(min-width: ${size.desktop})`,
 };
 
+const media = ` @media ${device.mobileM} { 
+  width:375px;
+  justify-content:center;
+  margin:auto;
+ };
+ @media ${device.laptop} { 
+  width:239px;
+  justify-content:none;
+  margin:0;
+}`; */
+
+
 const Gridbase: CSSObject = {
   display: "block",
   width: "239px",
-  height: "1300px",
+  height: "994px",
   position: "fixed",
 };
-const media = ` @media ${device.mobileM} { 
-        width:375px;
-        justify-content:center;
-        margin:auto;
-       };
-       @media ${device.laptop} { 
-        width:239px;
-        justify-content:none;
-        margin:0;
-      }`;
 
 const Grid = styled.div<mode>`
   ${Gridbase};
   background: ${(props) => (props.dark ? "#4A4458" : "#4C3A80")};
-  ${media};
 `;
 
 const Header = styled.div`
-  display: block;
-  position: relative;
-  width: 100%;
-  height: fit-content;
-  left: 11px;
-  top: 113px;
-  justify-content: center;
-  margin-bottom: 30px;
+display:block;
+position: relative; 
+width: 100%;
+height: 108px;
+left: 9px;
+top: 40px;
+justify-content:center;
+margin-bottom:30px;
 `;
 const H3 = styled.h3({
   display: "block",
   position: "initial",
-  paddingLeft: "30px",
+  paddingLeft: "50px",
+  color: "white",
 });
 
 const Divider = styled.div({
@@ -92,22 +95,39 @@ const SearchInput = styled.input({
   boxShadow: "2px 5px 10px rgba(76, 58, 128, 0.25)",
   borderRadius: "6px",
   paddingLeft: "30px",
+  color: "white",
 });
 
 const ComponentChecklist = styled.div`
-  display: block;
-  position: relative;
-  width: 238px;
-  height: 600px;
-  top: 160px;
+display: block;
+position: initial;
+width: 238px;
+height: 1150px;
+left: 0px;
+top: 221px;
+margin-top:55px;
+color: white,
 `;
 
 const ComponentList = styled.div`
-  flex-direction: column;
-  align-items: center;
-  width: 231px;
-  height: 1045px;
-  overflow-y: scroll;
+flex-direction: column;
+align-items: center;
+width:231px;
+height:68%;
+overflow-y: scroll;
+scrollbar-width: thin;
+::-webkit-scrollbar {
+    border: 1px solid transparent;
+    background: rgba(106, 90, 205, 0.2);
+    border-radius: 8px 8px 8px 8px;
+    width:10px;
+};
+::-webkit-scrollbar-thumb {
+    background: rgb(217, 217, 217, 0.35);
+    border-radius: 8px ;
+    border: 1px solid transparent;
+};
+color: white;
 `;
 
 const ListGrid = styled.div({

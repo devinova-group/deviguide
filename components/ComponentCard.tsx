@@ -1,7 +1,6 @@
 import {useState} from "react";
 import {
   Button,
-  IconButton,
   Badge,
   Card,
   CardContent,
@@ -17,6 +16,7 @@ import { ButtonPreviews } from "./buttonPreview";
 import { ToastPreview } from "./toastPreview";
 import { TypographyPreview } from "./typographyPreview";
 import { IconButtonPreview} from "./IconButtonPreview"; 
+import { AvatarPreview } from "./avatarPreview";
 
 interface renderComponentProps {
   component: string;
@@ -32,6 +32,8 @@ const RenderComponent = ({component}: renderComponentProps) => {
     setOpen(true);
   };
   switch (component) {
+    case "avatar":
+      return <AvatarPreview />;
     case "button":
       return <ButtonPreviews />;
     case "iconbutton":
