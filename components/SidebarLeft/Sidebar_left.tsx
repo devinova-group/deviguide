@@ -68,7 +68,8 @@ margin-bottom:30px;
 const H3 = styled.h3({
   display: "block",
   position: "initial",
-  paddingLeft: "50px"
+  paddingLeft: "50px",
+  color: "white",
 });
 
 const Divider = styled.div({
@@ -94,7 +95,7 @@ const SearchInput = styled.input({
   boxShadow: "2px 5px 10px rgba(76, 58, 128, 0.25)",
   borderRadius: "6px",
   paddingLeft: "30px",
-  color:"wheat",
+  color: "white",
 });
 
 const ComponentChecklist = styled.div`
@@ -105,6 +106,7 @@ height: 1150px;
 left: 0px;
 top: 221px;
 margin-top:55px;
+color: white,
 `;
 
 const ComponentList = styled.div`
@@ -124,7 +126,8 @@ scrollbar-width: thin;
     background: rgb(217, 217, 217, 0.35);
     border-radius: 8px ;
     border: 1px solid transparent;
-}
+};
+color: white;
 `;
 
 const ListGrid = styled.div({

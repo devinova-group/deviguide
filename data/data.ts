@@ -11,6 +11,17 @@ interface compNameData {
 }
 
 export const compData: compNameData = {
+  avatar: {
+    name: "Avatar",
+    description:
+      "Avatar are used as interactive components between the user name and the user image",
+    usage:
+      "Status badge can change to different status",
+    spacing:
+      "The Avatar size is 64px as standard, properties include Style, ClassName both can change Avatar size",
+    principles:
+      "The Avatar used with or without user image or user name, standard one is no image",
+  },
   button: {
     name: "Button",
     description:
